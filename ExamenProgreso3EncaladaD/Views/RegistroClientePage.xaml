@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ExamenProgreso3EncaladaD.Views.RegistroClientePage"
-             Title="RegistroClientePage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             xmlns:vm="clr-namespace:ExamenProgreso3EncaladaD.ViewModels"
+             x:Class="ExamenProgreso3EncaladaD.Views.RegistroClientePage">
+
+    <ContentPage.BindingContext>
+        <vm:ClienteViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Emil Encalada - 23/11/2025" FontSize="18" HorizontalOptions="Center" />
+
+            <Entry Placeholder="Nombre" Text="{Binding Nombre}" />
+            <Entry Placeholder="Empresa" Text="{Binding Empresa}" />
+            <Entry Placeholder="Antigüedad en meses" Keyboard="Numeric" Text="{Binding AntiguedadMeses}" />
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <Label Text="Activo?" VerticalOptions="Center" />
+                <Switch IsToggled="{Binding Activo}" />
+            </StackLayout>
+
+            <Button Text="Guardar Cliente" Command="{Binding GuardarCommand}" />
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

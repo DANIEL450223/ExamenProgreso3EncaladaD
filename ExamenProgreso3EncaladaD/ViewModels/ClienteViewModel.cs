@@ -50,7 +50,7 @@ namespace ExamenProgreso3EncaladaD.ViewModels
 
         public ObservableCollection<Cliente> Clientes { get; set; } = new ObservableCollection<Cliente>();
 
-        public ICommand GuardarCommand { get; }
+        public ICommand GuardarCommand { get; set; }
 
         async Task Guardar()
         {

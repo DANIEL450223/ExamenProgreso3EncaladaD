@@ -3,13 +3,20 @@
     x:Class="ExamenProgreso3EncaladaD.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:ExamenProgreso3EncaladaD"
-    Shell.FlyoutBehavior="Disabled"
-    Title="ExamenProgreso3EncaladaD">
+    xmlns:views="clr-namespace:ExamenProgreso3EncaladaD.Views">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+        <ShellContent Title="Registro"
+                      ContentTemplate="{DataTemplate views:RegistroClientePage}"
+                      Route="RegistroClientePage" />
+
+        <ShellContent Title="Clientes"
+                      ContentTemplate="{DataTemplate views:ClientesListPage}"
+                      Route="ClientesListPage" />
+
+        <ShellContent Title="Logs"
+                      ContentTemplate="{DataTemplate views:LogsPage}"
+                      Route="LogsPage" />
+    </TabBar>
 
 </Shell>
